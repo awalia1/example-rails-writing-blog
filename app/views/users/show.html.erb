@@ -1,0 +1,16 @@
+<h1><% @user.first_name %> <% @user.last_name %></h1>
+<%# image_tag(@user.photo, size: '100x100') %>
+<p> You can reach <%= @user.first_name %> at <%= @user.email %>!
+<p><%= @user.bio %></p>
+
+<% unless @user.articles.empty? %>
+    <h4>Articles wrtitten by <%= @user.full_name %></h4>
+    <% @user.articles.each do |a| %>
+        <% link_to "#{a.title}", a %><br>
+    <% end %>
+
+    <% else %>
+
+    <h4><%= @user.first_name %> hasn't written any articles yet. </h4>
+
+<% end %>
