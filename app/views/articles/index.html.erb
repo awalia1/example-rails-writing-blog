@@ -1,0 +1,4 @@
+<h1>Recent Articles</h1>
+<% @articles.each do |a| %>
+<h3><%= link_to "#{a.title}", a %></h3>
+<% end %>
