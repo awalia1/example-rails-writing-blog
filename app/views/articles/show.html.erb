@@ -1,5 +1,6 @@
 <h1><%= @article.title %></h1>
+<p><%= long_article?(@article) %></p>
 <%= image_tag(@article.cover_photo, class: "img-responsive")%>
-<em> written by <% @article.author %></em><br>
+<p><em> written by <% @article.author %></em></p><br>
 <%= link_to "Edit", edit_article_path %>
 <p><%= @article.content %></p>

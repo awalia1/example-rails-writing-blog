@@ -1,6 +1,7 @@
 <h1>Recent Articles</h1>
 <% @articles.each do |a| %>
 <h3><%= link_to "#{a.title}", a %><br>
-    <small> <%= time_ago_in_words(a.created_at) %> ago </small>
+    <p><%= long_article?(a) %></p>
+    <small>written <%= time_ago_in_words(a.created_at) %> ago </small>
 </h3>
 <% end %>
