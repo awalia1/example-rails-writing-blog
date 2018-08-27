@@ -3,7 +3,11 @@
 <%= form_for (@user) do |f| %>
     <%= f.text_field :first_name, placeholder: 'First name' %><br>
     <%= f.text_field :last_name, placeholder: 'Last name' %><br>
-    <%= f.email_field :email,  placeholder: 'Email' %><br>
+    <%= f.email_field :email,  placeholder: 'Email', required: true %><br>
+
+    <%= f.password_field :password,  placeholder: 'Password', required: true  %><br>
+    <%= f.password_field :password_confirmation,  placeholder: 'Confirm Password', required: true %><br>
+
     <%= f.label :photo, 'Upload a Photo'%><br>
     <%=  f.file_field :photo %><br>
     <%= f.text_area :bio,  placeholder: 'Write Bio' %><br>
