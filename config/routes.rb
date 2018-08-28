@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :users
   resources :articles
 
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+
   get '/write'=>'articles#new'
   get 'articles/edit'
   get 'articles/show'

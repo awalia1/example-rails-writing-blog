@@ -3,3 +3,7 @@
 
 <h3><%= link_to "Write a New Article", write_path %></h3>
 <h3><%= link_to "Recent Articles", articles_path %></h3>
+
+<% if logged_in? %>
+    You are logged in
+<% end %>
