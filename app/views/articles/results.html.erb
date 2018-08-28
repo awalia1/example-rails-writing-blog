@@ -1,0 +1,7 @@
+<h1> Articles matching "<%= @results %>" </h1>
+
+<% @final_results.each do |res| %>
+
+<%= link_to "#{res.title}", res %> <br>
+
+<% end %>

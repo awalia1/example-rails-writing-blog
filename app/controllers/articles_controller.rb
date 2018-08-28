@@ -39,6 +39,44 @@ end
   	@articles = Article.all.order('CREATED_AT DESC')
   end
 
+  def search
+
+  end
+
+  def results
+    @results = params[:q]
+    p params[:date_submitted]
+
+    if params[:terms].to_i != 1
+      p 'user did not agree'
+      render 'search'
+    end
+
+    p params
+
+    search_words = params[:q].split(' ')
+    titles = Article.pluck(:title)
+    matches= []
+    @final_results = []
+    search_words.each do |word|
+      titles.each do |t|
+        if t.include?(word)
+          matches << t
+        end
+      end
+    end
+    p matches
+    matches.each do |match|
+      Article.all.each do |article|
+        x = Article.where(title: match)
+        x.each do |y|
+          @final_results << y
+        end
+      end
+    end
+    @final_results.uniq!
+  end
+
   private
 
   def article_params

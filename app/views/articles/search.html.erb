@@ -1,0 +1,9 @@
+
+<h1>Search Articles</h1>
+
+<%= form_tag('/results', method: 'get') do %>
+    <%= text_field_tag(:q) %> <br>
+    <%= date_field_tag(:date_submitted) %> <br>
+    <%= check_box_tag(:terms) %> I agree to the terms<br><b>
+    <%= submit_tag("Search") %>
+<% end %>
