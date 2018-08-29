@@ -18,4 +18,5 @@ require 'faker'
     match = Article.find_by(title: art.title)
     if !match
         art.save
+    end
 }
