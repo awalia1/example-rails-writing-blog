@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      msg = "Thanks for signing up, #{user.email}!"
+      flash[:notice] = msg
      redirect_to @user
     else
       render 'new'

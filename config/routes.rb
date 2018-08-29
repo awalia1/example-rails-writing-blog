@@ -1,6 +1,7 @@
 Rails.application.routes.draw do 
   root 'pages#home'
 
+  #controller => action
   get 'register' => 'users#new'
   get 'users/edit'
   get 'users/show'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
   get '/write'=>'articles#new'
   get 'articles/edit'

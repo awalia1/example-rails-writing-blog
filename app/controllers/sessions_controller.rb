@@ -11,12 +11,16 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       msg = "Invalid Credentials"
+      p msg
       render 'new'
     end
   end
 
   def destroy
-    
+    session[:user_id] = nil
+    log_out if logged_in?
+    p 'Logged out succesfully'
+    redirect_to root_path
   end
 
 end
